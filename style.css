@@ -1263,3 +1263,47 @@ html[data-theme="light"] {
   pointer-events: none;
   z-index: 1;
 }
+
+/* Clean final fix: remove CSS-drawn vine stems that became stray green lines.
+   Keep the pixel-art trees in project previews, but stop pseudo-elements from
+   drawing decorations outside the card/preview they belong to. */
+.skills-section .section-heading::after,
+.skills-section .section-heading-wide::after,
+.projects-section .section-heading::after,
+.projects-section .section-heading-wide::after,
+.contact-section .section-heading::after,
+.contact-section .section-heading-wide::after,
+.contact-heading::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  box-shadow: none !important;
+}
+.skill-card::before,
+.skill-card::after,
+.project-card::before,
+.project-card::after,
+.contact-card::before,
+.contact-card::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  box-shadow: none !important;
+  animation: none !important;
+}
+/* Project preview trees are the only card decorations retained. Their existing
+   pixel silhouettes remain inside the preview's clipping boundary. */
+.project-preview {
+  position: relative !important;
+  overflow: hidden !important;
+  isolation: isolate;
+}
+.project-preview::before,
+.project-preview::after {
+  pointer-events: none;
+  z-index: 1;
+}
+.project-preview > * {
+  position: relative;
+  z-index: 2;
+}
