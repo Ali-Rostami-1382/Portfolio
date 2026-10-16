@@ -798,3 +798,28 @@ html[data-theme="light"] .contact-card::after { filter: saturate(.9); }
   .skill-card::after, .project-card::after, .contact-card::after { right: 8px; bottom: 8px; }
   .site-nav { border-radius: 0; border-width: 2px; }
 }
+
+
+/* Fix project hit areas: live-demo overlay covers the whole card, repo arrow stays on top */
+.project-card { position: relative; }
+.project-card > .project-live-link {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: block;
+  cursor: pointer;
+  border-radius: 0;
+}
+.project-card > .project-info,
+.project-card > .project-tags {
+  pointer-events: none;
+}
+.project-card > .project-info .project-arrow {
+  position: relative;
+  z-index: 6;
+  pointer-events: auto;
+}
+.project-card > .project-info .project-arrow:focus-visible {
+  outline: 3px solid var(--mint);
+  outline-offset: 3px;
+}
