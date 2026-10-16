@@ -1220,3 +1220,46 @@ html[data-theme="light"] {
   z-index: 1;
   pointer-events: none;
 }
+
+/* Remove stray hanging pixels between section headings and their cards.
+   These heading pseudo-elements were the light-green marks floating outside boxes. */
+.skills-section .section-heading::after,
+.skills-section .section-heading-wide::after,
+.projects-section .section-heading::after,
+.projects-section .section-heading-wide::after,
+.contact-section .section-heading::after,
+.contact-section .section-heading-wide::after,
+.contact-heading::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Keep the decorative pixel trees wholly inside the preview/card boundaries. */
+.project-preview {
+  position: relative;
+  overflow: hidden;
+  contain: paint;
+}
+.project-preview::before,
+.project-preview::after {
+  z-index: 1;
+  pointer-events: none;
+}
+.project-preview > * {
+  position: relative;
+  z-index: 2;
+}
+.skill-card,
+.project-card,
+.contact-card {
+  overflow: hidden;
+}
+.skill-card::before,
+.skill-card::after,
+.project-card::before,
+.project-card::after,
+.contact-card::before,
+.contact-card::after {
+  pointer-events: none;
+  z-index: 1;
+}
