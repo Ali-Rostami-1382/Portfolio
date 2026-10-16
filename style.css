@@ -2215,3 +2215,82 @@ html[data-theme="light"] .project-card .project-actions > a.project-button-live 
   color: #fff !important;
   -webkit-text-fill-color: #fff !important;
 }
+
+
+/* Circular accents: soften the pixel-world geometry without losing its character. */
+.wordmark-icon {
+  border-radius: 50% !important;
+  box-shadow: 0 0 0 4px #b8f47718, 0 0 22px #79c94d20;
+}
+.availability-dot {
+  border-radius: 0 !important;
+  width: 6px !important;
+  height: 6px !important;
+  box-shadow: 0 0 0 4px #a8edc715, 0 0 0 7px #a8edc70a !important;
+}
+.skill-icon {
+  border-radius: 50% !important;
+  width: 48px !important;
+  height: 48px !important;
+  outline: 1px solid #79c94d45;
+  outline-offset: 4px;
+}
+.contact-icon {
+  border-radius: 50% !important;
+  width: 42px !important;
+  height: 42px !important;
+  box-shadow: 0 0 0 4px #79c94d12;
+}
+.project-arrow {
+  border-radius: 50% !important;
+}
+.floating-chip {
+  border-radius: 999px !important;
+}
+.project-card .project-button-live {
+  border-radius: 999px !important;
+}
+.project-card .project-button-repo {
+  border-radius: 999px !important;
+}
+.mini-button {
+  border-radius: 999px !important;
+}
+.window-dots i,
+.mini-top i {
+  border-radius: 50% !important;
+}
+.art-orbit {
+  border-radius: 50%;
+  border-style: dashed;
+  border-color: #8bb4b526;
+}
+.skill-card:hover .skill-icon,
+.contact-card:hover .contact-icon {
+  box-shadow: 0 0 0 5px #79c94d1a, 0 0 24px #79c94d20;
+  transition: box-shadow .2s ease, transform .2s ease;
+}
+.contact-card:hover .contact-icon {
+  transform: translateY(-2px);
+}
+.game-dev-note {
+  border-left: 0 !important;
+  border-radius: 18px !important;
+  position: relative;
+  padding-left: 54px !important;
+  border: 1px solid #79c94d35 !important;
+  background:
+    radial-gradient(circle at 24px 50%, #b8f477 0 3px, transparent 4px),
+    radial-gradient(circle at 24px 50%, #79c94d25 0 12px, transparent 13px),
+    linear-gradient(110deg, #79c94d0e, transparent 72%) !important;
+}
+html[data-theme="light"] .game-dev-note {
+  border-color: #5d984355 !important;
+  background:
+    radial-gradient(circle at 24px 50%, #236b2d 0 3px, transparent 4px),
+    radial-gradient(circle at 24px 50%, #79c94d25 0 12px, transparent 13px),
+    linear-gradient(110deg, #79c94d16, transparent 72%) !important;
+}
+@media (max-width: 600px) {
+  .game-dev-note { padding-left: 46px !important; }
+}
