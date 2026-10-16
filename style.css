@@ -2129,3 +2129,41 @@ html[data-theme="light"] .game-dev-note {
 @media (max-width: 600px) {
   .game-dev-note { font-size: 11px; padding: 14px 12px; }
 }
+
+
+/* High-contrast project actions: keep Live demo readable in both themes. */
+.project-card .project-button-live,
+.project-card .project-button-live:visited {
+  background: #b8f477 !important;
+  color: #142514 !important;
+  border-color: #8ac94b !important;
+  text-shadow: none !important;
+}
+.project-card .project-button-live span {
+  color: #142514 !important;
+}
+.project-card .project-button-live:hover {
+  background: #d0ff9d !important;
+  color: #102010 !important;
+  border-color: #6fb53a !important;
+}
+.project-card .project-button-live:hover span {
+  color: #102010 !important;
+}
+html[data-theme="light"] .project-card .project-button-live,
+html[data-theme="light"] .project-card .project-button-live:visited {
+  background: #236b2d !important;
+  color: #ffffff !important;
+  border-color: #236b2d !important;
+}
+html[data-theme="light"] .project-card .project-button-live span {
+  color: #ffffff !important;
+}
+html[data-theme="light"] .project-card .project-button-live:hover {
+  background: #174f21 !important;
+  color: #ffffff !important;
+  border-color: #174f21 !important;
+}
+html[data-theme="light"] .project-card .project-button-live:hover span {
+  color: #ffffff !important;
+}
