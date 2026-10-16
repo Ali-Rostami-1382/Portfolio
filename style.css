@@ -1307,3 +1307,61 @@ html[data-theme="light"] {
   position: relative;
   z-index: 2;
 }
+
+/* Detailed pixel trees: broad leafy crowns, stepped branches, and visible trunks.
+   These replace the old thin vine-like preview decorations without affecting layout. */
+.project-preview::before,
+.project-preview::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  image-rendering: pixelated;
+  pointer-events: none;
+  transform: none !important;
+  animation: none !important;
+  z-index: 1;
+}
+.project-preview::before {
+  top: auto !important;
+  left: 18px !important;
+  right: auto !important;
+  bottom: 18px !important;
+  width: 8px;
+  height: 8px;
+  background: #b8f477;
+  box-shadow:
+    8px 0 #b8f477, 16px 0 #8ccf5a, 24px 0 #5fae48,
+    -8px 8px #8ccf5a, 0 8px #8ccf5a, 8px 8px #79c94d,
+    16px 8px #79c94d, 24px 8px #5fae48, 32px 8px #39852e,
+    -8px 16px #5fae48, 0 16px #79c94d, 8px 16px #5fae48,
+    16px 16px #5fae48, 24px 16px #39852e, 32px 16px #39852e,
+    0 24px #805337, 8px 24px #8c603c,
+    0 32px #805337, 8px 32px #805337,
+    0 40px #805337, 8px 40px #805337,
+    -8px 40px #805337, 16px 40px #805337;
+}
+.project-preview::after {
+  top: 20px !important;
+  left: auto !important;
+  right: 18px !important;
+  bottom: auto !important;
+  background: #8ccf5a;
+  box-shadow:
+    8px 0 #b8f477, 16px 0 #79c94d,
+    0 8px #79c94d, 8px 8px #8ccf5a, 16px 8px #5fae48, 24px 8px #39852e,
+    -8px 16px #5fae48, 0 16px #79c94d, 8px 16px #5fae48, 16px 16px #39852e,
+    0 24px #805337, 8px 24px #8c603c,
+    0 32px #805337, 8px 32px #805337,
+    0 40px #805337, 8px 40px #805337;
+}
+html[data-theme="light"] .project-preview::before {
+  filter: saturate(.9);
+}
+html[data-theme="light"] .project-preview::after {
+  filter: saturate(.9);
+}
+@media (max-width: 650px) {
+  .project-preview::before { left: 10px !important; bottom: 10px !important; }
+  .project-preview::after { right: 10px !important; top: 10px !important; }
+}
