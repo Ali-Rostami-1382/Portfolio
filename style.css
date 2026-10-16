@@ -823,3 +823,63 @@ html[data-theme="light"] .contact-card::after { filter: saturate(.9); }
   outline: 3px solid var(--mint);
   outline-offset: 3px;
 }
+
+
+/* Separate, explicit actions on every project card */
+.project-card > .project-live-link { display: none; }
+.project-card > .project-info { pointer-events: auto; }
+.project-card .project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+  pointer-events: auto;
+  position: relative;
+  z-index: 6;
+}
+.project-card .project-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 38px;
+  padding: 9px 11px;
+  border: 2px solid var(--border);
+  background: var(--surface-light);
+  color: var(--text);
+  box-shadow: 3px 3px 0 #0003;
+  font: 700 11px/1.2 "DM Mono", monospace;
+  transition: transform .12s steps(2, end), box-shadow .12s steps(2, end), background .2s, border-color .2s;
+}
+.project-card .project-button span { color: var(--mint); }
+.project-card .project-button-live {
+  background: var(--mint);
+  color: #102610;
+  border-color: var(--mint);
+}
+.project-card .project-button-live span { color: inherit; }
+.project-card .project-button:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 #0003;
+  border-color: var(--mint);
+}
+.project-card .project-button:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 #0003;
+}
+.project-card .project-button:focus-visible {
+  outline: 3px solid var(--mint);
+  outline-offset: 3px;
+}
+html[data-theme="light"] .project-card .project-button {
+  box-shadow: 3px 3px 0 #47753b35;
+}
+html[data-theme="light"] .project-card .project-button-live {
+  background: #287b2c;
+  color: #fff;
+  border-color: #287b2c;
+}
+@media (max-width: 520px) {
+  .project-card .project-actions { gap: 7px; }
+  .project-card .project-button { flex: 1 1 auto; padding-inline: 8px; }
+}
