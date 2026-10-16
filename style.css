@@ -1001,3 +1001,130 @@ html[data-theme="light"] {
   border-radius: 2px;
   border-width: 2px;
 }
+
+
+/* Alignment fix + hanging pixel vines across the forest UI */
+.skill-grid {
+  align-items: stretch;
+}
+.skill-card {
+  min-width: 0;
+  overflow: visible;
+  isolation: isolate;
+}
+/* Give each toolkit card a stable, card-relative vine anchor.
+   The stem is built from square pixels, so it never drifts like a transformed sprite. */
+.skill-card::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 24px;
+  width: 4px;
+  height: 24px;
+  z-index: 3;
+  pointer-events: none;
+  background: var(--pixel-leaf);
+  box-shadow:
+    0 4px var(--pixel-leaf),
+    0 8px var(--pixel-leaf),
+    0 12px var(--pixel-leaf),
+    0 16px var(--pixel-leaf),
+    0 20px var(--pixel-leaf);
+  animation: none;
+}
+.skill-card::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 28px;
+  right: auto;
+  bottom: auto;
+  width: 4px;
+  height: 4px;
+  z-index: 3;
+  pointer-events: none;
+  background: var(--pixel-leaf-light);
+  box-shadow:
+    4px 0 var(--pixel-leaf-light),
+    8px 0 var(--pixel-leaf),
+    8px 4px var(--pixel-leaf),
+    -4px 8px var(--pixel-leaf),
+    -8px 8px var(--pixel-leaf),
+    -8px 12px var(--pixel-leaf-light),
+    0 16px var(--pixel-bark);
+}
+/* Vines hang from the top edge of project and contact cards too. */
+.project-card::before,
+.contact-card::before {
+  top: -2px;
+  left: 22px;
+  width: 4px;
+  height: 20px;
+  background: var(--pixel-leaf);
+  box-shadow:
+    0 4px var(--pixel-leaf),
+    0 8px var(--pixel-leaf),
+    0 12px var(--pixel-leaf),
+    0 16px var(--pixel-leaf);
+  animation: none;
+}
+.project-card::after,
+.contact-card::after {
+  top: 8px;
+  right: auto;
+  left: 26px;
+  bottom: auto;
+  width: 4px;
+  height: 4px;
+  background: var(--pixel-leaf-light);
+  box-shadow:
+    4px 0 var(--pixel-leaf-light),
+    8px 0 var(--pixel-leaf),
+    8px 4px var(--pixel-leaf),
+    -4px 8px var(--pixel-leaf),
+    -8px 8px var(--pixel-leaf),
+    -8px 12px var(--pixel-leaf-light);
+}
+/* Keep the decorations attached to the cards while the card itself moves on hover. */
+.skill-card::before,
+.skill-card::after,
+.project-card::before,
+.project-card::after,
+.contact-card::before,
+.contact-card::after {
+  transform: none;
+  filter: none;
+}
+/* Add subtle hanging vines to the section breaks, including the toolkit area. */
+.skills-section .section-heading,
+.projects-section .section-heading,
+.contact-section .section-heading,
+.skills-section .section-heading-wide {
+  position: relative;
+}
+.skills-section .section-heading::after,
+.projects-section .section-heading::after,
+.contact-section .section-heading::after,
+.skills-section .section-heading-wide::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 12px;
+  width: 4px;
+  height: 18px;
+  margin-top: 4px;
+  background: var(--pixel-leaf);
+  box-shadow:
+    0 4px var(--pixel-leaf),
+    0 8px var(--pixel-leaf),
+    4px 8px var(--pixel-leaf-light),
+    8px 12px var(--pixel-leaf),
+    8px 16px var(--pixel-leaf-light);
+  pointer-events: none;
+}
+@media (max-width: 650px) {
+  .skill-card::before { left: 18px; }
+  .skill-card::after { left: 22px; }
+  .project-card::before, .contact-card::before { left: 16px; }
+  .project-card::after, .contact-card::after { left: 20px; }
+}
