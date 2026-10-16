@@ -1459,3 +1459,15 @@ html[data-theme="light"] .skill-tags span {
   .skill-card h3 { margin-top: 16px; }
   .skill-card p { min-height: 0; }
 }
+
+/* Tighten the top of toolkit cards so the content sits closer to the border. */
+.skill-card {
+  padding-top: 17px !important;
+}
+.skill-card h3 {
+  margin-top: 15px !important;
+}
+@media (max-width: 650px) {
+  .skill-card { padding-top: 16px !important; }
+  .skill-card h3 { margin-top: 13px !important; }
+}
