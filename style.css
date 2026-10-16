@@ -883,3 +883,45 @@ html[data-theme="light"] .project-card .project-button-live {
   .project-card .project-actions { gap: 7px; }
   .project-card .project-button { flex: 1 1 auto; padding-inline: 8px; }
 }
+
+
+/* Keep pixel trees and vine decorations behind card content */
+.skill-card::before,
+.skill-card::after,
+.project-card::before,
+.project-card::after,
+.contact-card::before,
+.contact-card::after {
+  z-index: 1;
+  pointer-events: none;
+}
+.skill-card > *,
+.project-card > *,
+.contact-card > * {
+  z-index: 2;
+}
+.contact-card {
+  overflow: hidden;
+  min-width: 0;
+}
+.contact-card strong,
+.contact-card small {
+  overflow-wrap: anywhere;
+}
+.contact-card:hover {
+  transform: translateY(-1px);
+}
+@media (max-width: 650px) {
+  .contact-card::before {
+    top: 6px;
+    left: 6px;
+    transform: scale(.7);
+    transform-origin: top left;
+  }
+  .contact-card::after {
+    right: 6px;
+    bottom: 6px;
+    transform: scale(.7);
+    transform-origin: bottom right;
+  }
+}
