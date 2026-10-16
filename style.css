@@ -1128,3 +1128,83 @@ html[data-theme="light"] {
   .project-card::before, .contact-card::before { left: 16px; }
   .project-card::after, .contact-card::after { left: 20px; }
 }
+
+/* Final forest alignment pass: keep every pixel tree/vine sprite inside its frame. */
+.skill-grid {
+  align-items: stretch;
+}
+.skill-card,
+.project-card,
+.contact-card {
+  position: relative;
+  isolation: isolate;
+}
+.skill-card {
+  overflow: hidden;
+}
+.project-card,
+.contact-card {
+  overflow: hidden;
+}
+/* The little tree sprites in project previews are anchored to the preview box,
+   clipped at its edges, and never positioned outside their frame. */
+.project-preview {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.project-preview::before {
+  top: 12px;
+  left: 12px;
+  right: auto;
+  bottom: auto;
+  max-width: calc(100% - 24px);
+  max-height: calc(100% - 24px);
+  transform: none;
+}
+.project-preview::after {
+  top: auto;
+  right: 12px;
+  bottom: 12px;
+  left: auto;
+  max-width: calc(100% - 24px);
+  max-height: calc(100% - 24px);
+  transform: none;
+}
+/* Consistent inset anchors stop the card-corner trees from appearing offset. */
+.skill-card::before,
+.project-card::before,
+.contact-card::before {
+  top: 8px;
+  left: 8px;
+  right: auto;
+  bottom: auto;
+  transform: none;
+  animation: none;
+}
+.skill-card::after,
+.project-card::after,
+.contact-card::after {
+  top: auto;
+  right: 8px;
+  bottom: 8px;
+  left: auto;
+  transform: none;
+  animation: none;
+}
+.skill-card > *,
+.project-card > *,
+.contact-card > * {
+  position: relative;
+  z-index: 2;
+}
+@media (max-width: 650px) {
+  .project-preview::before { top: 8px; left: 8px; }
+  .project-preview::after { right: 8px; bottom: 8px; }
+  .skill-card::before,
+  .project-card::before,
+  .contact-card::before { top: 6px; left: 6px; }
+  .skill-card::after,
+  .project-card::after,
+  .contact-card::after { right: 6px; bottom: 6px; }
+}
