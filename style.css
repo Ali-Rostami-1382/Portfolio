@@ -1208,3 +1208,15 @@ html[data-theme="light"] {
   .project-card::after,
   .contact-card::after { right: 6px; bottom: 6px; }
 }
+
+
+/* Keep decorative pixels behind readable card content. */
+.skill-card::before,
+.skill-card::after,
+.project-card::before,
+.project-card::after,
+.contact-card::before,
+.contact-card::after {
+  z-index: 1;
+  pointer-events: none;
+}
