@@ -2167,3 +2167,51 @@ html[data-theme="light"] .project-card .project-button-live:hover {
 html[data-theme="light"] .project-card .project-button-live:hover span {
   color: #ffffff !important;
 }
+
+
+/* Explicitly restore the Live demo label (overrides all legacy button rules). */
+.project-card .project-actions > a.project-button-live,
+.project-card .project-actions > a.project-button-live:link,
+.project-card .project-actions > a.project-button-live:visited {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  min-width: 124px !important;
+  min-height: 48px !important;
+  padding: 12px 14px !important;
+  background: #b8f477 !important;
+  border: 2px solid #8ac94b !important;
+  color: #142514 !important;
+  -webkit-text-fill-color: #142514 !important;
+  font: 700 12px/1.2 "DM Mono", monospace !important;
+  text-indent: 0 !important;
+  letter-spacing: normal !important;
+  text-shadow: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+.project-card .project-actions > a.project-button-live span {
+  display: inline !important;
+  color: #142514 !important;
+  -webkit-text-fill-color: #142514 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+.project-card .project-actions > a.project-button-live:hover {
+  background: #d0ff9d !important;
+  color: #102010 !important;
+  -webkit-text-fill-color: #102010 !important;
+}
+html[data-theme="light"] .project-card .project-actions > a.project-button-live,
+html[data-theme="light"] .project-card .project-actions > a.project-button-live:link,
+html[data-theme="light"] .project-card .project-actions > a.project-button-live:visited {
+  background: #236b2d !important;
+  border-color: #236b2d !important;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+html[data-theme="light"] .project-card .project-actions > a.project-button-live span {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
