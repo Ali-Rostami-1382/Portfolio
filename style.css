@@ -2294,3 +2294,9 @@ html[data-theme="light"] .game-dev-note {
 @media (max-width: 600px) {
   .game-dev-note { padding-left: 46px !important; }
 }
+
+
+/* Remove the duplicate station numbers beside the circular skill icons. */
+.skill-card > .skill-number {
+  display: none !important;
+}
