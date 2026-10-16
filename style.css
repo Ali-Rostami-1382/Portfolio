@@ -925,3 +925,79 @@ html[data-theme="light"] .project-card .project-button-live {
     transform-origin: bottom right;
   }
 }
+
+
+/* Pixelated linework: chunky edges, stepped shadows, and blocky dividers */
+:root {
+  --pixel-line: #8bd66b;
+  --pixel-shadow: #426d37;
+}
+html[data-theme="light"] {
+  --pixel-line: #287b2c;
+  --pixel-shadow: #9bc58a;
+}
+.skill-card,
+.project-card,
+.contact-card {
+  border: 2px solid var(--border);
+  border-radius: 3px;
+  box-shadow: 3px 3px 0 var(--pixel-shadow);
+}
+.skill-card:hover,
+.project-card:hover,
+.contact-card:hover {
+  box-shadow: 4px 4px 0 var(--pixel-shadow);
+}
+/* Repeat short blocks instead of drawing smooth, continuous section rules */
+.site-header {
+  border-bottom: 0;
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--pixel-line) 0 8px,
+    transparent 8px 12px,
+    var(--pixel-line) 12px 16px,
+    transparent 16px 20px
+  );
+  background-repeat: no-repeat;
+  background-size: 100% 2px;
+  background-position: bottom left;
+}
+.intro-strip,
+.skills-section,
+.contact-section {
+  border-block: 0;
+  position: relative;
+}
+.intro-strip::before,
+.intro-strip::after,
+.skills-section::before,
+.skills-section::after,
+.contact-section::before,
+.contact-section::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 3px;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--pixel-line) 0 8px,
+    transparent 8px 12px
+  );
+}
+.intro-strip::before,
+.skills-section::before,
+.contact-section::before { top: 0; }
+.intro-strip::after,
+.skills-section::after,
+.contact-section::after { bottom: 0; }
+/* Small square pixels on tag and button outlines */
+.skill-tags span,
+.project-tags span,
+.project-card .project-button,
+.nav-contact,
+.theme-toggle {
+  border-radius: 2px;
+  border-width: 2px;
+}
