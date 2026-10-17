@@ -2300,3 +2300,10 @@ html[data-theme="light"] .game-dev-note {
 .skill-card > .skill-number {
   display: none !important;
 }
+
+
+/* English CV download action */
+.button-cv { color: #d8f9b8; border: 1px solid #79c94d70; background: #79c94d12; }
+.button-cv:hover { background: #79c94d22; }
+.button-cv span { color: #b8f477; }
+html[data-theme="light"] .button-cv { color: #24522a; border-color: #5d984366; background: #79c94d12; }
