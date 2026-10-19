@@ -2618,3 +2618,44 @@ img, svg, video, canvas, iframe {
   pre, code, table { max-width: 100% !important; }
   .floating-chip { max-width: calc(100vw - 40px) !important; }
 }
+
+
+/* Final Android hero spacing: keep the top chip clear of the footnote and the portrait fully separated. */
+@media screen and (max-width: 760px) {
+  .hero.section-wrap {
+    gap: 18px !important;
+    padding-top: 34px !important;
+    padding-bottom: 36px !important;
+  }
+  .hero-photo-wrap {
+    padding: 76px 0 !important;
+    margin-top: 8px !important;
+    margin-bottom: 8px !important;
+    min-height: 0 !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+  .hero-photo-wrap .chip-top {
+    top: 0 !important;
+    bottom: auto !important;
+  }
+  .hero-photo-wrap .chip-bottom {
+    bottom: 0 !important;
+    top: auto !important;
+  }
+  .hero-photo-frame {
+    width: min(190px, 100%) !important;
+    height: 260px !important;
+    margin: 0 auto !important;
+    transform: none !important;
+  }
+  .hero-photo-wrap .chip-top,
+  .hero-photo-wrap .chip-bottom {
+    width: min(300px, calc(100vw - 48px)) !important;
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+  }
+  .hero-art::before { top: 24% !important; left: 2% !important; }
+  .hero-art::after { top: auto !important; bottom: 20% !important; right: 2% !important; }
+}
