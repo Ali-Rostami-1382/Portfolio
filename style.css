@@ -2398,3 +2398,107 @@ html[data-theme="light"] .button-cv { color: #24522a; border-color: #5d984366; b
   .hero-photo-wrap .chip-top { top: -66px !important; }
   .hero-photo-wrap .chip-bottom { bottom: -66px !important; }
 }
+
+
+/* Mobile repair: prevent sideways overflow and give the hero a real vertical layout. */
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+img, svg, video, canvas, iframe {
+  max-width: 100%;
+}
+@media (max-width: 760px) {
+  .section-wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+  .hero {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 28px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow: visible !important;
+  }
+  .hero-copy,
+  .hero-art,
+  .hero-photo-wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+  .hero-copy { position: relative !important; }
+  .hero-copy h1 {
+    max-width: 100% !important;
+    overflow-wrap: anywhere;
+    font-size: clamp(38px, 10vw, 58px) !important;
+    line-height: .98 !important;
+  }
+  .hero-description { max-width: 100% !important; }
+  .hero-actions {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 12px !important;
+    max-width: 100% !important;
+  }
+  .hero-actions .button {
+    max-width: 100% !important;
+    min-width: 0 !important;
+    white-space: normal !important;
+  }
+  .hero-footnote {
+    max-width: 100% !important;
+    overflow-wrap: anywhere;
+  }
+  .hero-photo-wrap {
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 66px 0 !important;
+    margin: 0 !important;
+    position: relative !important;
+    overflow: visible !important;
+  }
+  .hero-photo-frame {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    width: 190px !important;
+    max-width: 100% !important;
+    height: 260px !important;
+    margin: 0 auto !important;
+    transform: none !important;
+  }
+  .hero-photo {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+  .hero-photo-wrap .chip-top,
+  .hero-photo-wrap .chip-bottom {
+    position: absolute !important;
+    left: 50% !important;
+    right: auto !important;
+    width: min(300px, 100%) !important;
+    max-width: 100% !important;
+    transform: translateX(-50%) rotate(0deg) !important;
+    margin: 0 !important;
+    z-index: 4 !important;
+    white-space: normal !important;
+  }
+  .hero-photo-wrap .chip-top { top: 0 !important; bottom: auto !important; }
+  .hero-photo-wrap .chip-bottom { bottom: 0 !important; top: auto !important; }
+  .photo-caption { max-width: calc(100% - 20px) !important; }
+  .photo-caption { font-size: 11px !important; }
+  .hero, .hero-copy, .hero-art, .hero-photo-wrap { overflow-wrap: anywhere; }
+}
