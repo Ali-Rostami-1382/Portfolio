@@ -2345,3 +2345,16 @@ html[data-theme="light"] .button-cv { color: #24522a; border-color: #5d984366; b
   .hero-photo-wrap .chip-top { left: max(0px, calc(50% - 120px)); }
   .hero-photo-wrap .chip-bottom { right: max(0px, calc(50% - 120px)); }
 }
+
+
+/* Keep the green floating chips outside the portrait instead of crossing it. */
+.hero-photo-wrap { position: relative; overflow: visible !important; }
+.hero-photo-wrap .floating-chip,
+.hero-photo-wrap .chip-top,
+.hero-photo-wrap .chip-bottom { z-index: 3 !important; }
+.hero-photo-wrap .chip-top { top: -24px !important; left: 4px !important; }
+.hero-photo-wrap .chip-bottom { bottom: -24px !important; right: 0 !important; }
+@media (max-width: 760px) {
+  .hero-photo-wrap .chip-top { top: -18px !important; }
+  .hero-photo-wrap .chip-bottom { bottom: -18px !important; }
+}
