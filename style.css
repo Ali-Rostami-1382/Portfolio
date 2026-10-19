@@ -2331,3 +2331,17 @@ html[data-theme="light"] .button-cv { color: #24522a; border-color: #5d984366; b
   .hero-photo-wrap .chip-top { left: 0; }
   .hero-photo-wrap .chip-bottom { right: 0; }
 }
+
+
+/* Keep the portfolio headshot compact and balanced beside the intro */
+.hero-photo-wrap { min-height: 0 !important; height: 300px; }
+.hero-photo-frame { width: min(100%, 245px) !important; height: 300px !important; border-radius: 24px; }
+.hero-photo { object-fit: cover; object-position: center 25%; }
+.hero-photo-wrap .chip-top { top: 22px; left: 4px; }
+.hero-photo-wrap .chip-bottom { bottom: 22px; right: 0; }
+@media (max-width: 760px) {
+  .hero-photo-wrap { height: 260px; min-height: 0 !important; }
+  .hero-photo-frame { width: 190px !important; height: 260px !important; }
+  .hero-photo-wrap .chip-top { left: max(0px, calc(50% - 120px)); }
+  .hero-photo-wrap .chip-bottom { right: max(0px, calc(50% - 120px)); }
+}
