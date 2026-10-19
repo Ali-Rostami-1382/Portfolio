@@ -2670,3 +2670,16 @@ img, svg, video, canvas, iframe {
     bottom: 18px !important;
   }
 }
+
+
+/* Mobile dashed rail fix v3: keep the rail at the section edge, not beside the text. */
+@media screen and (max-width: 760px) {
+  #home.hero.section-wrap { padding-left: 24px !important; padding-right: 24px !important; }
+  #home .hero-copy { padding-left: 20px !important; }
+  #home .hero-copy::before { left: 0 !important; width: 3px !important; }
+  #home .hero-copy h1,
+  #home .hero-copy .eyebrow,
+  #home .hero-copy .hero-description,
+  #home .hero-copy .hero-actions,
+  #home .hero-copy .hero-footnote { position: relative; }
+}
