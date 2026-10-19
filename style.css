@@ -2659,3 +2659,14 @@ img, svg, video, canvas, iframe {
   .hero-art::before { top: 24% !important; left: 2% !important; }
   .hero-art::after { top: auto !important; bottom: 20% !important; right: 2% !important; }
 }
+
+
+/* Give the mobile hero text breathing room from its decorative dashed rail. */
+@media screen and (max-width: 760px) {
+  .hero-copy { padding-left: 14px !important; }
+  .hero-copy::before {
+    left: -10px !important;
+    top: 5px !important;
+    bottom: 18px !important;
+  }
+}
