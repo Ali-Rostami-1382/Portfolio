@@ -2375,3 +2375,26 @@ html[data-theme="light"] .button-cv { color: #24522a; border-color: #5d984366; b
   .hero-photo-wrap .chip-top { top: -10px !important; }
   .hero-photo-wrap .chip-bottom { bottom: -10px !important; }
 }
+
+
+/* Final geometry fix: the entire chips sit 10px outside the photo, and the photo is level. */
+.hero-photo-frame {
+  transform: none !important;
+}
+.hero-photo-wrap .chip-top,
+.hero-photo-wrap .chip-bottom {
+  position: absolute !important;
+  left: 50% !important;
+  right: auto !important;
+  width: min(100%, 300px) !important;
+  transform: translateX(-50%) rotate(0deg) !important;
+  margin: 0 !important;
+}
+/* Chips are about 56px tall, so offset by their height plus the requested 10px gap. */
+.hero-photo-wrap .chip-top { top: -66px !important; }
+.hero-photo-wrap .chip-bottom { bottom: -66px !important; }
+@media (max-width: 760px) {
+  .hero-photo-frame { transform: none !important; }
+  .hero-photo-wrap .chip-top { top: -66px !important; }
+  .hero-photo-wrap .chip-bottom { bottom: -66px !important; }
+}
